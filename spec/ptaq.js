@@ -1,22 +1,29 @@
 module.exports = {
 
     "Header of PTAQ website should say \"Poznań Testing and Quality Group\"" : function (browser) {
+
+        var header = browser.page.header();
+
         browser
-            .url("http://ptaq.org/")
+            .url(browser.globals.host)
             .useXpath()
-            .waitForElementVisible("//header/table//h1/a", 5000)
-            .assert.containsText("//header/table//h1/a", "Poznań Testing and Quality Group")
+            .waitForElementVisible(header.selectors.title)
+            .assert.containsText(header.selectors.title, header.messages.title)
             .end()
     },
 
-    "\PTaQ - o nas\" should navigate to /ptaq-onas.html": function (browser) {
+    "\"PTaQ - o nas\" should navigate to /ptaq-o-nas.html": function (browser) {
+
+        var header = browser.page.header();
+        var about = browser.page.about();
+
         browser
-            .url("http://ptaq.org/")
+            .url(browser.globals.host)
             .useXpath()
-            .waitForElementVisible("//*[@id=\"item-475\"]/a", 5000)
-            .click("//*[@id=\"item-475\"]/a")
-            .waitForElementVisible("//div//h2/a[contains(., \"PTaQ, czyli Poznań Testing and Quality Group\")]", 5000)
-            .assert.urlEquals("http://ptaq.org/ptaq-onas.html")
+            .waitForElementVisible(header.selectors.about)
+            .click(header.selectors.about)
+            .waitForElementVisible(about.getHeader())
+            .assert.urlEquals(browser.globals.host + about.messages.url)
             .end()
     }
 };
