@@ -1,6 +1,3 @@
-//Copyright © 2008-2015 Egnyte Inc. All Rights Reserved.
-/*jslint node: true*/
-"use strict";
 var flag;
 
 exports.assertion = function (text) {
