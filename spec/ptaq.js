@@ -6,7 +6,6 @@ module.exports = {
 
         browser
             .url(browser.globals.host)
-            .useXpath()
             .waitForElementVisible(header.selectors.title)
             .assert.containsText(header.selectors.title, header.messages.title)
             .end()
@@ -19,7 +18,6 @@ module.exports = {
 
         browser
             .url(browser.globals.host)
-            .useXpath()
             .waitForElementVisible(header.selectors.about)
             .click(header.selectors.about)
             .waitForElementVisible(about.getHeader())

@@ -4,7 +4,8 @@ module.exports = function (browser) {
 
         selectors: {
             title: "//header/table//h1/a",
-            about: "//*[@id=\"item-475\"]/a"
+            about: "//*[@id=\"item-475\"]/a",
+            searchInput: "//*[@id=\"mod-search-searchword\"]"
         },
 
         messages: {

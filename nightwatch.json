@@ -3,6 +3,8 @@
   "output_folder": "reports",
   "globals_path": "globals.js",
   "page_objects_path": "pages/",
+  "custom_commands_path": "commands/",
+  "custom_assertions_path": "assertions/",
   "selenium": {
     "start_process": true,
     "server_path": "resources/selenium-server-standalone-2.48.2.jar",
@@ -14,6 +16,7 @@
   "test_settings": {
     "default": {
       "silent": true,
+      "use_xpath": true,
       "desiredCapabilities": {
         "browserName": "firefox",
         "javascriptEnabled": true,
